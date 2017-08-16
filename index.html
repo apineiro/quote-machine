@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quote Machine">
+    <meta name="author" content="Alfredo Pineiro">
+
+    <title>Quote Machine</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+      <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+      <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <script>
+    $(document).ready(function() {
+      $("#getMessage").on("click", function(){
+        $.getJSON("http://quotes.stormconsultancy.co.uk/random.json", function(json) {
+          var myQuote = '"' + json.quote + '"';
+          var author =  '-' + json.author;
+          var fullQuote = myQuote + " " + author;
+          var stringQuote = "https://twitter.com/intent/tweet?&related=freecodecamp&text=" + fullQuote;
+          document.getElementById("quote").href = stringQuote;
+          $(".message").html(myQuote);
+          $(".author").html(author);
+        });
+      });
+    });
+  </script>
+
+  <!-- Main -->
+    <div class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <button id = "getMessage" class = "btn btn-primary">
+            generate quote
+          </button>
+          <div class="col-lg-12">
+            <h1>quote machine</h1>
+          </div>
+          <div class="col-lg-12">
+            <a href="https://twitter.com/intent/tweet?&related=freecodecamp&text=Welcome to the quote machine! Generate random quotes by clicking the -generate quote- button and send them via Twitter by clicking on the Larry bird. Enjoy!" id="quote" target="_blank"><i class="fa fa-3x fa-twitter"></i></a>
+          </div>
+          <div class="col-lg-12 message">
+            <h1>Welcome to the quote machine!</h1>
+            <h1>Generate random quotes by clicking the -generate quote- button and send them via Twitter by clicking on the Larry bird.</h1>
+            <h1>Enjoy!</h1>
+          </div>
+          <div class="col-lg-12 author">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Footer Section -->
+  <a name="footer"></a>
+    <div class="footer-message">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+              <h3><b>CodeForGood.info - © No Rights Reserved!</b></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>

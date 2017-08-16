@@ -1,0 +1,69 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+/* unvisited link */
+a:link {
+    color: white;
+}
+/* visited link */
+a:visited {
+    color: white;
+}
+/* mouse over link */
+a:hover {
+    color: white;
+}
+/* selected link */
+a:active {
+    color: white;
+}
+.main {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #21268b;
+    color: white;
+}
+.message {
+    padding-top: 4%;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+    font-size: 25pt;
+    background: #21268b;
+    color: #809df8;
+}
+.author {
+  padding-top: 17pt;
+  padding-left: 35%;
+  padding-right: 35%;
+  text-align: right;
+  font-size: 17pt;
+  font-style: bold;
+  background: #21268b;
+  color: #809df8;
+}
+.footer-message {
+    padding-top: 10px;
+    padding-botton: 10px;
+    text-align: center;
+    background: #809df8;
+    color: blue;
+}
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
